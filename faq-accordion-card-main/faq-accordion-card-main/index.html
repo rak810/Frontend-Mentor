@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <article>
+    <div class="grid-container">
+      <div class="comp">
+        <img src="images/illustration-box-desktop.svg" alt="">
+      </div>
+      <div class="grid-item-1">
+        <picture>
+          <source media="(max-width: 801px)" srcset="./images/bg-pattern-mobile.svg">
+          <img src="images/bg-pattern-desktop.svg" alt="">
+        </picture>
+        <picture>
+          <source media="(max-width: 801px)" srcset="./images/illustration-woman-online-mobile.svg">
+          <img src="images/illustration-woman-online-desktop.svg" alt="">
+        </picture>
+      </div>
+      <h2 class="grid-item-2">FAQ</h2>
+      <div class="grid-item-3">
+        <div class="dropdown">
+          <p>How many team members can I invite?</p>
+          <p>  You can invite up to 2 additional users on the Free plan. There is no limit on 
+            team members for the Premium plan.</p>
+        </div>
+        <div class="dropdown">
+          <p> What is the maximum file upload size?</p>
+          <p>
+            No more than 2GB. All files in your account must fit your allotted storage space.
+          </p>
+        </div>
+        <div class="dropdown">
+          <p>How do I reset my password?</p>
+          <p>  Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.</p>
+        </div>
+        <div class="dropdown">
+          <p>Can I cancel my subscription?</p>
+          <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+        </div>
+        <div class="dropdown">
+          <p>
+            Do you provide additional support?</p>
+          <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script>
+    var p = document.querySelectorAll('.dropdown p:first-child');
+    var q = document.querySelectorAll('.dropdown p:last-child');
+    var isOpen = [];
+
+    for(let k = 0; k < p.length; k++) {
+      isOpen.push(false);
+    }
+
+    for(let i = 0; i < p.length; i++) {
+      p[i].addEventListener('click', function() {
+        console.log(isOpen[i]);
+        if(isOpen[i]) {
+          p[i].style.fontWeight = '400';
+          p[i].style.marginBottom = '0';
+          p[i].style.borderBottom = '2px solid var(--div-light-gr-blue';
+          q[i].style.display = 'none';
+          p[i].style.setProperty('--tr', '0deg');
+          isOpen[i] = false;
+        }
+        else {
+          closeOthers(i, p, q);
+          p[i].style.fontWeight = '700';
+          p[i].style.marginBottom = '0.1rem';
+          p[i].style.borderBottom = '0';
+          q[i].style.display = 'block';
+          p[i].style.setProperty('--tr', '180deg');
+          isOpen[i] = true;
+        }
+      });
+    }
+
+    function closeOthers(t, p, q) {
+      console.log(t);
+      for(let i = 0; i < p.length; i++) {
+        if(i !== t) {
+          p[i].style.fontWeight = '400';
+          p[i].style.marginBottom = '0';
+          p[i].style.borderBottom = '2px solid var(--div-light-gr-blue';
+          q[i].style.display = 'none';
+          p[i].style.setProperty('--tr', '0deg');
+        }
+      }
+    }
+
+  </script>
+</body>
+</html>

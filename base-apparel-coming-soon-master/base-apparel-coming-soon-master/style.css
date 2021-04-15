@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-desat-red: hsl(0, 36%, 70%);
+    --primary-sf-red: hsl(0, 93%, 68%);
+    --neutral-gr-red: hsl(0, 6%, 24%); 
+}
+
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    background: url(images/bg-pattern-desktop.svg);
+}
+
+.grid-container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: repeat(11, 1fr);
+    gap: 1rem;
+}
+
+.grid-item-1 {
+    grid-row: 2 / span 2;
+    grid-column: 1 / span 1;
+}
+
+.grid-item-2 {
+    grid-row: 4 / span 4;
+    grid-column: 1 / span 1;
+    
+}
+
+.grid-item-3 {
+    grid-row: 8 / span 1;
+    grid-column: 1 / span 1;
+    /* margin-top: ; */
+}
+
+.grid-item-4 {
+    grid-row: 9 / span 1;
+    grid-column: 1 / span 1;
+}
+
+.grid-item-5 {
+    grid-row: 10 / span 1;
+    grid-column: 1 / span 1;
+    display: block;
+}
+
+.grid-item-6 {
+    grid-row: 1/ span 11;
+    grid-column: 2/span 1;
+    background: url('images/hero-desktop.jpg') center no-repeat ;
+    height: 100%;
+    width: 100%;
+}
+
+.pad {
+    margin: 1rem 12rem;
+}
+
+
+h1#heading {
+    font-size: 4rem;
+}
+
+h1 span {
+    display: block;
+    line-height: 4rem;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+h1 span:first-child {
+    font-weight: 300;
+    color: var(--primary-desat-red);
+}
+
+p {
+    line-height: 1.5rem;
+    color: var(--primary-desat-red);
+}
+
+.input-div {
+    border: 2px solid var(--primary-desat-red);
+    height: 2.5rem;
+    display: flex;
+    border-radius: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    margin-bottom: -1rem;
+    
+}
+
+.input-div input {
+    width: 70%;
+    height: 100%;
+    border-style: none;
+    padding: 1rem;
+    border-radius: inherit;
+    outline: none;
+}
+
+.input-div > img {
+    height: 1.5rem;
+    width: 1.5rem;
+    display: none;
+}
+
+.input-div a {
+    display: block;
+    height: 115%;
+    width: 20%;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    position: relative;
+    box-shadow: 10px 11px 57px 10px var(--primary-desat-red);
+    -webkit-box-shadow: -8px 11px 57px -4px var(--primary-desat-red);
+    -moz-box-shadow: 10px 11px 57px 10px var(--primary-desat-red);
+
+}
+.input-div a:hover {
+    box-shadow: -6px 10px 30px -5px pink;
+    /* transition: box-shadow 2s; */
+}
+
+.input-div a img {
+    height: 1rem;
+    width: 1rem;
+    position: absolute;
+    top:30%;
+    left: 36%;
+    transform: translate(30%, 10%);
+}
+
+
+.grid-item-1 > img {
+    margin-top: 3rem;
+}
+
+div#err-div {
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+    color: red;
+    opacity: 0.7;
+    display: none;
+    margin-top: 0.3rem;
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (max-width : 800px) {
+    body {
+        background: white;
+    }
+    .grid-container {
+        margin-top: 1rem;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(18, 1fr);
+
+    }
+
+    .grid-item-1 {
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+    }
+
+    .grid-item-2 {
+        grid-row: 10 / span 6;
+        grid-column: 1 / span 1;
+        text-align: center;
+ 
+    }
+
+    .grid-item-3 {
+        grid-row: 16 / span 1;
+        grid-column: 1 / span 1;
+        /* margin-top: ; */
+    }
+
+    .grid-item-4 {
+        grid-row: 17 / span 1;
+        grid-column: 1 / span 1;
+    }
+
+    .grid-item-5 {
+        grid-row: 18 / span 1;
+        grid-column: 1 / span 1;    
+        margin-top: 1rem;
+    }
+
+    .grid-item-6 {
+        grid-row: 2 / span 8;
+        grid-column: 1 /span 1;
+        height: 100%;
+        width: 100%;
+        background: url('images/hero-mobile.jpg') center no-repeat;
+        background-size: 100% 100%;
+        
+    }
+
+    .pad {
+        margin: 1.2rem;
+    }
+
+    h1#heading {
+        font-size: 2.5rem;
+    }
+
+    h1#heading span {
+        display: block;
+        line-height: 2.5rem;
+        letter-spacing: 1rem;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    div#err-div {
+        margin-top: -1.5rem;
+        font-size: 0.7rem;
+        display: none;
+    }
+}
+
